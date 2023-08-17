@@ -2,9 +2,14 @@
 
 **Calculadora.Console** é um modelo inicial para o segundo projeto PDI jr.
 
-## Criando um projeto baseado no Calculadora.Console
+## Scripts DB
 
-A forma mais simples de criar um projeto baseado no **Calculadora.Console** é obtendo o mesmo em seu diretorio.
-
-Bons estudos!
-
+ - Criar tabela OperacoesHistorico
+ ```
+ CREATE TABLE OperacoesHistorico (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    NomeOperacao NVARCHAR(100),
+    Resultado VARCHAR(11),
+    DataOperacao DATE
+);
+ ```
