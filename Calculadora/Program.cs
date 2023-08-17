@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Application;
 
 namespace Calculator
@@ -39,6 +40,46 @@ namespace Calculator
 
         static void Soma()
         {
+            var valores = ObterValores();
+
+            float resultado = Operacoes.Somar(valores[0], valores[1]);
+            Console.WriteLine($"O resultado da soma é {resultado}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static void Subtracao()
+        {
+            var valores = ObterValores();
+
+            float resultado = Operacoes.Subtracao(valores[0], valores[1]);
+            Console.WriteLine($"O resultado da subtração é {resultado}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static void Divisao()
+        {
+            var valores = ObterValores();
+
+            float resultado = Operacoes.Divisao(valores[0], valores[1]);
+            Console.WriteLine($"O resultado da divisão é {resultado}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static void Multiplicacao()
+        {
+            var valores = ObterValores();
+
+            float resultado = Operacoes.Multiplicacao(valores[0], valores[1]);
+            Console.WriteLine($"O resultado da multiplicação é {resultado}");
+            Console.ReadKey();
+            Menu();
+        }
+
+        static List<float> ObterValores()
+        {
             Console.Clear();
 
             Console.WriteLine("Primeiro valor: ");
@@ -49,28 +90,7 @@ namespace Calculator
 
             Console.WriteLine("");
 
-            float resultado = Operacoes.Somar(v1, v2);
-            Console.WriteLine($"O resultado da soma é {resultado}");
-            Console.ReadKey();
-            Menu();
-        }
-
-        static void Subtracao()
-        {
-            Console.Clear();
-            Menu();
-        }
-
-        static void Divisao()
-        {
-            Console.Clear();
-            Menu();
-        }
-
-        static void Multiplicacao()
-        {
-            Console.Clear();
-            Menu();
+            return new List<float>() { v1, v2 };
         }
     }
 }
